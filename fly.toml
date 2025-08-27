@@ -1,0 +1,15 @@
+app = "monero-miner"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  ENV = "production"
+
+[[services]]
+  internal_port = 3333
+  protocol = "tcp"
+  [[services.ports]]
+    handlers = ["tls"]
+    port = 443
